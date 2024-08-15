@@ -20,6 +20,6 @@ Then, insert your own netID email and password
 
 ## Run Commands
 ### Test Login Function
-AutoBooking> `python -m killam.test_login
+AutoBooking> `python -m killam.test_login`
 
 
