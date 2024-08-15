@@ -1,0 +1,7 @@
+*/__pychace__/
+*/.vscode/
+*/.idea/
+
+.env
+*.env
+*/.env
