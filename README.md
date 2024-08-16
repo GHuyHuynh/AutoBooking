@@ -20,6 +20,9 @@ Then, insert your own netID email and password
 
 ## Run Commands
 ### Test Login Function
-AutoBooking> `python -m killam.test_login`
+~AutoBooking> `python -m test_folder.test_login`
+
+### Test Booking Function
+~AutoBooking> `python -m roombooking.book_room.py`
 
 

@@ -7,9 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 # Initialize the selenium webdriver
 def initSelenium() -> webdriver.Chrome:
-   options = Options()
-   options.add_experimental_option("detach", True)
-   driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+   driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
    return driver
 
 
@@ -17,8 +15,6 @@ def initSelenium() -> webdriver.Chrome:
 def login(email: str, password: str, driver: webdriver.Chrome) -> webdriver.Chrome:
    driver.get('https://roombooking.library.dal.ca/')
 
-   # TODO: Delete when run on server
-   driver.maximize_window()
 
    email_field = driver.find_element(By.ID, 'email')
    password_field = driver.find_element(By.ID, 'password')
