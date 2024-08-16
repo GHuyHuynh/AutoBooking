@@ -19,10 +19,12 @@ Then, insert your own netID email and password
 
 
 ## Run Commands
+At root folder, these commands can be run
+
 ### Test Login Function
-~AutoBooking> `python -m test_folder.test_login`
+`python -m test_folder.test_login`
 
 ### Test Booking Function
-~AutoBooking> `python -m roombooking.book_room.py`
+`python -m roombooking.book_room.py`
 
 
