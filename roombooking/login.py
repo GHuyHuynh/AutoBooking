@@ -10,13 +10,16 @@ def initSelenium() -> webdriver.Chrome:
    options = Options()
    options.add_experimental_option("detach", True)
    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-   driver.get('https://roombooking.library.dal.ca/')
-   driver.maximize_window()
    return driver
 
 
 # Login to the Dal Killam booking system
 def login(email: str, password: str, driver: webdriver.Chrome) -> webdriver.Chrome:
+   driver.get('https://roombooking.library.dal.ca/')
+
+   # TODO: Delete when run on server
+   driver.maximize_window()
+
    email_field = driver.find_element(By.ID, 'email')
    password_field = driver.find_element(By.ID, 'password')
 
@@ -37,7 +40,3 @@ def new_tab(driver: webdriver.Chrome, url: str) -> webdriver.Chrome:
    driver.switch_to.window(driver.window_handles[1])
    driver.get(url)
    return driver
-
-
-
-
