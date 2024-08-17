@@ -15,6 +15,7 @@ def initSelenium() -> webdriver.Chrome:
 def login(email: str, password: str, driver: webdriver.Chrome) -> webdriver.Chrome:
    driver.get('https://roombooking.library.dal.ca/')
 
+   driver.maximize_window()
 
    email_field = driver.find_element(By.ID, 'email')
    password_field = driver.find_element(By.ID, 'password')

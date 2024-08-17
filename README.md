@@ -21,6 +21,9 @@ Then, insert your own netID email and password
 ## Run Commands
 At root folder, these commands can be run
 
+### Book room G40I
+`python main.py`
+
 ### Test Login Function
 `python -m test_folder.test_login`
 

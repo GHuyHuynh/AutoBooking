@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-test_email = os.environ['TEST_EMAIL']
-test_password = os.environ['TEST_PASSWORD']
+test_email = os.environ['EMAIL']
+test_password = os.environ['PASSWORD']
 
 def test_login():
    driver = login.initSelenium()
