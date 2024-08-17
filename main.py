@@ -17,13 +17,13 @@ day: str = limit_date_object['day']
 month: str = limit_date_object['month']
 year: str = limit_date_object['year']
 
-url = generate_url(day, month, year, HOURS_2[0], HOURS_2[1])
+url: str = generate_url(day, month, year, HOURS_2[0], HOURS_2[1])
 
-email = os.getenv('EMAIL')
-password = os.getenv('PASSWORD')
+email: str = os.getenv('EMAIL')
+password: str = os.getenv('PASSWORD')
 
 
-result = book_room(email, password, url)
+result: int = book_room(email, password, url)
 
 if result == 0:
    print("Room booked successfully!")
