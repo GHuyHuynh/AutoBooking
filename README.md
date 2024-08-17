@@ -14,8 +14,8 @@ WIP
 
 
 ### Step 2: Creat .env file
-Use the `.env.template` and create a new `.env` file at the root of the project.
-Then, insert your own netID email and password
+Create a new `.env` file at the root of the project
+Copy variable from the `.env.template` and add your own variables by insert your own netID email and password
 
 
 ## Run Commands
