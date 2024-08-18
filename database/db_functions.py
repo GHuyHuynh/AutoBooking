@@ -39,7 +39,7 @@ if __name__ == "__main__":
    email = os.getenv("EMAIL")
    password = os.getenv("PASSWORD")
 
-   add_user(email, password)
+   # add_user(email, password)
 
    retrieved_password = get_password(email)
    if retrieved_password is None:
