@@ -37,4 +37,7 @@ At root folder, these commands can be run
 ### Test Booking Function
 `python -m roombooking.book_room.py`
 
-
+### (Optional) run add user function
+Un-comment `add_user(email, password)` at line 42
+Then run
+`python -m database.db_functions`

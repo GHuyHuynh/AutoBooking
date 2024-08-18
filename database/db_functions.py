@@ -36,14 +36,16 @@ def get_password(email: str):
    
 
 if __name__ == "__main__":
-   email = "hello@hello.com"
-   password = "password123"
+   email = os.getenv("EMAIL")
+   password = os.getenv("PASSWORD")
 
-   # add_user(email, password)
+   add_user(email, password)
 
    retrieved_password = get_password(email)
+   if retrieved_password is None:
+      print("User added but password retrieval failed!")
 
-   if password == retrieved_password:
+   elif password == retrieved_password:
       print("User added and password retrieved successfully!")
    
    else:
