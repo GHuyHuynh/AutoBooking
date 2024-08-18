@@ -1,6 +1,7 @@
 # AutoBooking
+---
 Python script that will auto book rooms at Dalhousie University
-
+---
 
 ## Installation
 ### Step 1: Install Dependencies
@@ -12,11 +13,17 @@ pip install selenium webdriver-manager python-dotenv
 #### macOS
 WIP
 
+#### (Optional) Run add user function to database
+```
+pip install supabase cryptography
+```
+
 
 ### Step 2: Creat .env file
 Create a new `.env` file at the root of the project
 Copy variable from the `.env.template` and add your own variables by insert your own netID email and password
 
+---
 
 ## Run Commands
 At root folder, these commands can be run
