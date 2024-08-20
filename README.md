@@ -1,7 +1,5 @@
 # AutoBooking
----
 Python script that will auto book rooms at Dalhousie University
----
 
 ## Installation
 ### Step 1: Install Dependencies
@@ -23,7 +21,6 @@ pip install supabase cryptography
 Create a new `.env` file at the root of the project
 Copy variable from the `.env.template` and add your own variables by insert your own netID email and password
 
----
 
 ## Run Commands
 At root folder, these commands can be run
