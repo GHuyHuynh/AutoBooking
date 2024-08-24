@@ -3,13 +3,11 @@ from dotenv import load_dotenv
 from typing import List
 from dates.date import limit_date_object
 from roombooking.generate_url import generate_url
-from roombooking.book_room import book_room
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from tempfile import mkdtemp
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
