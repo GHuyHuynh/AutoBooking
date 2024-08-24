@@ -7,7 +7,7 @@ Python script that will auto book rooms at Dalhousie University
 ### Step 1: Install Dependencies
 #### Windows
 ```
-pip install selenium webdriver-manager python-dotenv
+pip install -r requirements.txt
 ```
 
 #### macOS
@@ -29,7 +29,7 @@ Copy variable from the `.env.template` and add your own variables by insert your
 At root folder, these commands can be run
 
 ### Book room G40I
-`python main.py`
+`python lambda_function.py`
 
 ### Test Login Function
 `python -m test_folder.test_login`
