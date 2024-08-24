@@ -18,7 +18,8 @@ WIP
 
 ### Step 2: Creat .env file
 Create a new `.env` file at the root of the project
-Copy variable from the `.env.template` and add your own variables by insert your own netID email and password
+Copy variable from the `.env.template` and add your own variables by insert your own netID email and password.
+This would allow you to run with `python` but would not be necessary when run using Docker
 
 ## Run Commands
 At root folder, these commands can be run
