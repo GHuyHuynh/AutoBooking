@@ -26,7 +26,7 @@ At root folder, these commands can be run
 ### Option 1: Run with Docker
 ```
 docker build -t autobooking .
-docker run -e EMAIL=<your_email@example.com> -e PASSWORD=,your_password> -e TIME_BLOCK_ASSIGNED=<your_assigned_timeblock> autobooking
+docker run -e EMAIL=<your_email@example.com> -e PASSWORD=<your_password> -e TIME_BLOCK_ASSIGNED=<your_assigned_timeblock> autobooking
 ```
 
 ### Option 2: Run with Python
