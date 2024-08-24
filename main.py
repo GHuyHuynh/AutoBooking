@@ -18,12 +18,12 @@ from selenium.common.exceptions import TimeoutException
 load_dotenv()
 
 # Constants
-HOURS_1: List[int] = [9, 11]
-HOURS_2: List[int] = [11, 13]
-HOURS_3: List[int] = [13, 15]
-HOURS_4: List[int] = [15, 17]
+HOURS_0: List[int] = [9, 11]
+HOURS_1: List[int] = [11, 13]
+HOURS_2: List[int] = [13, 15]
+HOURS_3: List[int] = [15, 17]
 
-TIME_BLOCKS: List[List[int]] = [HOURS_1, HOURS_2, HOURS_3, HOURS_4]
+TIME_BLOCKS: List[List[int]] = [HOURS_0, HOURS_1, HOURS_2, HOURS_3]
 
 
 day: str = limit_date_object['day']
