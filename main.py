@@ -31,7 +31,7 @@ year: str = limit_date_object['year']
 
 email:str = os.getenv('EMAIL')
 password: str = os.getenv('PASSWORD')
-time_block_assigned: int = os.getenv('TIME_BLOCK_ASSIGNED')
+time_block_assigned: int = int(os.getenv('TIME_BLOCK_ASSIGNED'))
 
 personal_time_block: List[int] = TIME_BLOCKS[time_block_assigned]
 
