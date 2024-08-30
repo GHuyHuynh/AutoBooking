@@ -11,7 +11,7 @@ HOURS_4: List[int] = [15, 17]
 base_url: str = 'https://roombooking.library.dal.ca/reservation/?rid=208&sid=16&rd=2024-08-15&sd=2024-08-15%2012%3A00%3A00&ed=2024-08-15%2014%3A00%3A00'
 
 # Template URL to insert params
-template_url: str = 'https://roombooking.library.dal.ca/reservation/?rid=208&sid=16&rd={year}-{month}-{day}&sd={year}-{month}-{day}%20{start_hour}%3A00%3A00&ed={year}-{month}-{day}%20{end_hour}%3A00%3A00'
+template_url: str = 'https://roombooking.library.dal.ca/reservation/?rid=378&sid=16&rd={year}-{month}-{day}&sd={year}-{month}-{day}%20{start_hour}%3A00%3A00&ed={year}-{month}-{day}%20{end_hour}%3A00%3A00'
 
 
 
