@@ -2,14 +2,13 @@ from datetime import datetime, timedelta
 from typing import Dict
 
 # Dal Killam booking system allow for booking up to 7 days in advance
-# Right the code book 6 days in advance
 
-# TODO: Add function to exclude weekends if needed
+# Can avoid weekend if needed with CRON configuration on AWS
 
 date: datetime = datetime.now()
 
-# TODO: Ideally would run server on edge time to book the room ASAP
-date_limit: datetime = datetime.now() + timedelta(days=6)
+# Run on max possible date to book
+date_limit: datetime = datetime.now() + timedelta(days=7)
 
 today_day: str = date.strftime('%d')
 limit_day: str = date_limit.strftime('%d')
