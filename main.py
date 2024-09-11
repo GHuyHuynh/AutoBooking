@@ -182,6 +182,7 @@ try:
    
    print("Room booked successfully")
    
+# TODO: fix this error message block, sometimes successful booking message is display inside the error block
 except TimeoutException:
    print("Room booking failed")
    error_message = WebDriverWait(driver, 10).until(
