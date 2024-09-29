@@ -1,4 +1,5 @@
 import os
+import random
 from dotenv import load_dotenv
 from typing import List
 from dates.date import limit_date_object
@@ -12,6 +13,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from constants.constants import title_arrays, description_arrays
 
 load_dotenv()
 
@@ -36,6 +38,14 @@ password: str = os.getenv('PASSWORD')
 time_block_assigned: int = int(os.getenv('TIME_BLOCK_ASSIGNED'))
 
 personal_time_block: List[int] = TIME_BLOCKS[time_block_assigned]
+
+
+# Randomly select title and description
+random_index_title = random.randint(0, len(title_arrays) - 1)
+random_index_desc = random.randint(0, len(description_arrays) - 1)
+title_input: str = title_arrays[random_index_title]
+description_input: str = description_arrays[random_index_desc]
+
 
 chrome_options = Options()
 chrome_options.add_argument('--no-sandbox')
@@ -117,11 +127,11 @@ except TimeoutException:
 print(driver.title)
 
 title_field = driver.find_element(By.ID, 'reservation-title')
-title_field.send_keys('Team Meeting for society')
+title_field.send_keys(title_input)
 
 # reminder_checkbox = driver.find_element(By.ID, 'start-reminder-enabled')
 description_field = driver.find_element(By.ID, 'reservation-description')
-description_field.send_keys('Soceity meeting to discuss upcoming events of school year')
+description_field.send_keys(description_input)
 
 time.sleep(1)
 

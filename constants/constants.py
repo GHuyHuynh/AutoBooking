@@ -1,0 +1,8 @@
+from typing import List
+
+title_arrays: List[str] = ["Society Meetings", "Team Meeting", 
+"Client Discussion", "Project Planning", "Design Session", "Sprint Retrospective", "Daily Standup", "One-on-One", "Brainstorming Session", "Training Workshop", "All Hands Meeting", 
+"Budget Review", "Strategy Session", "Product Launch", "Sales Pitch", "Marketing Plan", "HR Interview", "Tech Talk", "Customer Support", "Vendor Meeting", "Board Meeting"]
+
+description_arrays: List[str] = ["Society meeting to discuss upcoming events of school year", "Team meeting to discuss project progress and blockers", 
+"Client discussion to review project requirements and deliverables", "Planning session for upcoming project phases", "Sprint retrospective to review completed work and plan next sprint", "Daily standup to sync team on progress and tasks", "One-on-one meeting to discuss individual performance and goals", "Brainstorming session to generate new ideas for product features", "Training workshop on new software tools", "All hands meeting to update the entire company on progress", "Budget review to allocate resources for the next quarter", "Strategy session to plan long-term goals", "Product launch meeting to coordinate release activities", "Sales pitch preparation for potential clients", "Marketing plan discussion for upcoming campaigns", "HR interview to assess new candidates", "Tech talk to share knowledge on recent technologies", "Customer support meeting to address user issues", "Vendor meeting to negotiate contracts", "Board meeting to discuss company performance and strategy"]
