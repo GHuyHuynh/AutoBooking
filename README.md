@@ -1,5 +1,5 @@
 # AutoBooking
-Python script that will auto book rooms at Dalhousie University
+Python script that will auto book rooms at University
 
 ## Pre-requisite
 Doker desktop would need to be install to run the docker build.
