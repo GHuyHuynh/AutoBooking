@@ -61,7 +61,10 @@ docker push <amazon account id>.dkr.ecr.<your aws region>.amazonaws.com/docker-i
 
 ### Step 2: Run Docker images with ECS
 Using the AWS Console, run the Docker Image just uploaded with the added enviroment variables.
+- Add the following enviroment variables to the ECS task:
+  - EMAIL
+  - PASSWORD
+  - TIME_BLOCK_ASSIGNED
 
 ### Step 3: Add CRON Job to ECS
 - Add schedule run to your ECS group using CRON.
-
