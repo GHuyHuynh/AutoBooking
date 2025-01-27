@@ -31,8 +31,9 @@ This would allow you to run with `python` but would not be necessary when run us
 At root folder, these commands can be run
 
 ### Option 1: Run with Docker
+Choose platfrom is linux/amd64 for your compute platform.
 ```bash
-docker build -t autobooking .
+docker build --platform linux/amd64 -t autobooking .
 docker run -e EMAIL=<your_email@example.com> -e PASSWORD=<your_password> -e TIME_BLOCK_ASSIGNED=<your_assigned_timeblock> autobooking
 ```
 
@@ -45,12 +46,13 @@ python -m main
 
 ### Pre-requisite
 - Install AWS CLI on your local computer.
+- Login to AWS CLI with `aws configure`.
 - Create a repo in your AWS account region in ECR with the repo named `docker images`.
 
 ### Step 1: Upload Container to ECR
 
 ```bash
-docker build -t killambooking . 
+docker build --platform linux/amd64 -t killambooking . 
 
 docker tag killambooking <aws account id>.dkr.ecr.<your aws region>.amazonaws.com/docker-images:v1.0.0
 
@@ -60,6 +62,8 @@ docker push <amazon account id>.dkr.ecr.<your aws region>.amazonaws.com/docker-i
 ```
 
 ### Step 2: Run Docker images with ECS
+Choose linux/x86 for your compute platform.
+
 Using the AWS Console, run the Docker Image just uploaded with the added enviroment variables.
 - Add the following enviroment variables to the ECS task:
   - EMAIL

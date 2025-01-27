@@ -10,7 +10,7 @@ def book_room(email: str, password: str, url: str) -> int:
    driver = login.login(email, password, driver)
    driver = login.new_tab(driver, url)
 
-   time.sleep(2)
+   time.sleep(1)
 
    title_field = driver.find_element(By.ID, 'reservation-title')
    reminder_checkbox = driver.find_element(By.ID, 'start-reminder-enabled')
@@ -27,14 +27,14 @@ def book_room(email: str, password: str, url: str) -> int:
 
    submit_button = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[1]/div[2]/button')
    
-   WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div/div/div[1]/div[2]/button')))
+   WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div/div/div[1]/div[2]/button')))
 
    driver.execute_script("arguments[0].scrollIntoView(true);", submit_button)
 
    time.sleep(1)
    submit_button.click()
 
-   time.sleep(2)
+   time.sleep(1)
 
    driver.quit()
    print("Driver quit")
