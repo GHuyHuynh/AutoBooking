@@ -116,7 +116,7 @@ print(login_url)
 time.sleep(1)
 
 try:
-   book_room_button = WebDriverWait(driver, 3).until(
+   book_room_button = WebDriverWait(driver, 2).until(
       EC.presence_of_element_located((By.XPATH, '//*[@id="reservation-owner-section"]/div[2]/div/div[2]'))
    )
    print("Room booking page loaded no login required")
@@ -126,7 +126,9 @@ except TimeoutException:
 
 print(driver.title)
 
-title_field = driver.find_element(By.ID, 'reservation-title')
+title_field = WebDriverWait(driver, 2).until(
+   EC.presence_of_element_located((By.ID, 'reservation-title'))
+)
 title_field.send_keys(title_input)
 
 # reminder_checkbox = driver.find_element(By.ID, 'start-reminder-enabled')
