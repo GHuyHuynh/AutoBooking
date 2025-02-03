@@ -52,9 +52,9 @@ python -m main
 ### Step 1: Upload Container to ECR
 
 ```bash
-docker build --platform linux/amd64 -t killambooking . 
+docker build --platform linux/amd64 -t autobooking . 
 
-docker tag killambooking <aws account id>.dkr.ecr.<your aws region>.amazonaws.com/docker-images:v1.0.0
+docker tag autobooking <aws account id>.dkr.ecr.<your aws region>.amazonaws.com/docker-images:v1.0.0
 
 aws ecr get-login-password --region <your aws region> | docker login --username AWS --password-stdin <amazon account id>.dkr.ecr.<your aws region>.amazonaws.com/docker-images
 

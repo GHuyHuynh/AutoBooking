@@ -27,7 +27,7 @@ def book_room(email: str, password: str, url: str) -> int:
 
    submit_button = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[1]/div[2]/button')
    
-   WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div/div/div[1]/div[2]/button')))
+   WebDriverWait(driver, 1).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div/div/div/div[1]/div[2]/button')))
 
    driver.execute_script("arguments[0].scrollIntoView(true);", submit_button)
 
