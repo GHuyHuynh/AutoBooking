@@ -11,7 +11,7 @@ HOURS_4: List[int] = [15, 17]
 # Room 1 Wallace McCain Learning Commons
 # rid refers to room id (room 1 = 14)
 # sid refers to space id (wallace mccain learning commons = 14)
-base_url: str = 'https://roombooking.library.dal.ca/reservation/?rid=14&sid=14&rd=2025-02-03&sd=2025-02-03%2009%3A00%3A00&ed=2025-02-03%2011%3A00%3A00'
+base_url: str = 'https://roombooking.library.dal.ca/reservation/?rid=17&sid=14&rd=2025-02-03&sd=2025-02-03%2009%3A00%3A00&ed=2025-02-03%2011%3A00%3A00'
 
 # Template URL to insert params
 template_url: str = 'https://roombooking.library.dal.ca/reservation/?rid=14&sid=14&rd={year}-{month}-{day}&sd={year}-{month}-{day}%20{start_hour}%3A00%3A00&ed={year}-{month}-{day}%20{end_hour}%3A00%3A00'
