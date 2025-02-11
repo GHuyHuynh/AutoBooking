@@ -113,7 +113,7 @@ driver.switch_to.window(driver.window_handles[1])
 driver.get(login_url)
 print(login_url)
 
-time.sleep(1)
+time.sleep(2.5)
 
 try:
    book_room_button = WebDriverWait(driver, 2).until(
@@ -126,7 +126,7 @@ except TimeoutException:
 
 print(driver.title)
 
-title_field = WebDriverWait(driver, 3).until(
+title_field = WebDriverWait(driver, 2).until(
    EC.presence_of_element_located((By.ID, 'reservation-title'))
 )
 title_field.send_keys(title_input)
