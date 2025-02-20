@@ -64,38 +64,33 @@ print(login_url)
 
 driver.get(url)
 
-time.sleep(1)
+time.sleep(2)
 
-email_field = WebDriverWait(driver, 2).until(
+email_field = WebDriverWait(driver, 1).until(
    EC.presence_of_element_located((By.ID, 'email'))
 )
 email_field.send_keys(email)
 
-password_field = WebDriverWait(driver, 2).until(
+password_field = WebDriverWait(driver, 1).until(
    EC.presence_of_element_located((By.ID, 'password'))
 )
 password_field.send_keys(password)
 
 print("Email and password entered successfully")
 
-time.sleep(1)
-
-login_button = WebDriverWait(driver, 2).until(
+login_button = WebDriverWait(driver, 1).until(
    EC.element_to_be_clickable((By.XPATH, '//button[@type="submit" and @name="login"]'))
 )
 
 driver.execute_script("arguments[0].scrollIntoView(true);", login_button)
 driver.execute_script("arguments[0].click();", login_button)
 
-time.sleep(1)
-
-
 try:
-   success_element = WebDriverWait(driver,2).until(
+   success_element = WebDriverWait(driver,1).until(
       EC.presence_of_element_located((By.XPATH, '//*[@id="schedule-actions"]'))  
    )
 
-   bell_icon = WebDriverWait(driver, 2).until(
+   bell_icon = WebDriverWait(driver, 1).until(
       EC.presence_of_element_located((By.XPATH, '//*[@id="nav-reservation-badge"]/span'))
    )
                                       
@@ -113,10 +108,13 @@ driver.switch_to.window(driver.window_handles[1])
 driver.get(login_url)
 print(login_url)
 
-time.sleep(2.5)
+# Wait for the page to load completely
+WebDriverWait(driver, 10).until(
+   lambda driver: driver.execute_script('return document.readyState') == 'complete'
+)
 
 try:
-   book_room_button = WebDriverWait(driver, 2).until(
+   book_room_button = WebDriverWait(driver, 1).until(
       EC.presence_of_element_located((By.XPATH, '//*[@id="reservation-owner-section"]/div[2]/div/div[2]'))
    )
    print("Room booking page loaded no login required")
@@ -126,7 +124,7 @@ except TimeoutException:
 
 print(driver.title)
 
-title_field = WebDriverWait(driver, 2).until(
+title_field = WebDriverWait(driver, 1).until(
    EC.presence_of_element_located((By.ID, 'reservation-title'))
 )
 title_field.send_keys(title_input)
@@ -139,7 +137,7 @@ time.sleep(1)
 
 try:
    print("Trying to find phone field")
-   phone_field = WebDriverWait(driver, 2).until(
+   phone_field = WebDriverWait(driver, 1).until(
       EC.visibility_of_element_located((By.ID, 'attribute-2'))
    )
    
@@ -163,7 +161,7 @@ except TimeoutException:
 
 time.sleep(1)
 
-terms_checkbox = WebDriverWait(driver, 2).until(
+terms_checkbox = WebDriverWait(driver, 1).until(
    EC.presence_of_element_located((By.XPATH, '//*[@id="reservation-terms-checkbox"]'))
 )                                   
 
@@ -172,7 +170,7 @@ driver.execute_script("arguments[0].click();", terms_checkbox)
 
 time.sleep(2)
 
-submit_button = WebDriverWait(driver, 2).until(
+submit_button = WebDriverWait(driver, 1).until(
    EC.element_to_be_clickable((By.XPATH, '//*[@id="react-root"]/div/div[1]/div[2]/button'))
 )
 
@@ -184,11 +182,11 @@ print("Executed submit button")
 time.sleep(1)
 
 try:
-   confirmation_message = WebDriverWait(driver, 2).until(
+   confirmation_message = WebDriverWait(driver, 1).until(
       EC.presence_of_element_located((By.XPATH, '//*[@id="react-root"]/div/div[3]/div/div/div/div/div[1]/i'))  
    )
 
-   confirmation_message2 = WebDriverWait(driver, 2).until(
+   confirmation_message2 = WebDriverWait(driver, 1).until(
       EC.presence_of_element_located((By.CLASS_NAME, 'bi bi-calendar2-check reservation-save-result-icon success'))  
    )
    
@@ -197,7 +195,7 @@ try:
 # TODO: fix this error message block, sometimes successful booking message is display inside the error block
 except TimeoutException:
    print("Room booking failed")
-   error_message = WebDriverWait(driver, 2).until(
+   error_message = WebDriverWait(driver, 1).until(
       EC.presence_of_element_located((By.XPATH, '//*[@id="react-root"]/div/div[3]/div/div/div'))  
    )
    print(error_message.text)
