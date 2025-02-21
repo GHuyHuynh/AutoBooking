@@ -109,7 +109,7 @@ driver.get(login_url)
 print(login_url)
 
 # Wait for the page to load completely
-WebDriverWait(driver, 10).until(
+WebDriverWait(driver, 20).until(
    lambda driver: driver.execute_script('return document.readyState') == 'complete'
 )
 
@@ -124,7 +124,7 @@ except TimeoutException:
 
 print(driver.title)
 
-title_field = WebDriverWait(driver, 1).until(
+title_field = WebDriverWait(driver, 3).until(
    EC.presence_of_element_located((By.ID, 'reservation-title'))
 )
 title_field.send_keys(title_input)
