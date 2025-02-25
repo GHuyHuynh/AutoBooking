@@ -109,7 +109,7 @@ driver.get(login_url)
 print(login_url)
 
 # Wait for the page to load completely
-WebDriverWait(driver, 30).until(
+WebDriverWait(driver, 60).until(
    lambda driver: driver.execute_script('return document.readyState') == 'complete'
 )
 
