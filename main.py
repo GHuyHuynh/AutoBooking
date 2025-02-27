@@ -109,17 +109,21 @@ driver.get(login_url)
 print(login_url)
 
 # Wait for the page to load completely
-WebDriverWait(driver, 60).until(
-   lambda driver: driver.execute_script('return document.readyState') == 'complete'
-)
-
 try:
-   book_room_button = WebDriverWait(driver, 1).until(
-      EC.presence_of_element_located((By.XPATH, '//*[@id="reservation-owner-section"]/div[2]/div/div[2]'))
+   WebDriverWait(driver, 60).until(
+      lambda driver: driver.execute_script('return document.readyState') == 'complete'
    )
-   print("Room booking page loaded no login required")
+   print("Booking Page loaded successfully after 60 sec webdriver wait")
 except TimeoutException:
-   print("Room booking page failed to load because of login")
+   print("Page failed to load completely after 60 seconds")
+
+# try:
+#    book_room_button = WebDriverWait(driver, 1).until(
+#       EC.presence_of_element_located((By.XPATH, '//*[@id="reservation-owner-section"]/div[2]/div/div[2]'))
+#    )
+#    print("Room booking page loaded no login required")
+# except TimeoutException:
+#    print("Room booking page failed to load element defined")
 
 
 print(driver.title)
