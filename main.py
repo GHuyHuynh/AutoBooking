@@ -117,18 +117,23 @@ try:
 except TimeoutException:
    print("Page failed to load completely after 60 seconds")
 
-# try:
-#    book_room_button = WebDriverWait(driver, 1).until(
-#       EC.presence_of_element_located((By.XPATH, '//*[@id="reservation-owner-section"]/div[2]/div/div[2]'))
-#    )
-#    print("Room booking page loaded no login required")
-# except TimeoutException:
-#    print("Room booking page failed to load element defined")
+
+try:
+   title_field = WebDriverWait(driver, 30).until(
+      EC.presence_of_element_located((By.ID, 'reservation-title'))
+   )
+except TimeoutException:
+   print("Could not find reservation title field, trying one more time")
+
+   # 2nd attempt
+   try:
+      title_field = WebDriverWait(driver, 30).until(
+         EC.presence_of_element_located((By.ID, 'reservation-title'))
+      )
+   except TimeoutException:
+      print("Could not find reservation title field after second attempt")
 
 
-title_field = WebDriverWait(driver, 30).until(
-   EC.presence_of_element_located((By.ID, 'reservation-title'))
-)
 title_field.send_keys(title_input)
 
 # reminder_checkbox = driver.find_element(By.ID, 'start-reminder-enabled')
