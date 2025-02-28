@@ -126,9 +126,7 @@ except TimeoutException:
 #    print("Room booking page failed to load element defined")
 
 
-print(driver.title)
-
-title_field = WebDriverWait(driver, 3).until(
+title_field = WebDriverWait(driver, 30).until(
    EC.presence_of_element_located((By.ID, 'reservation-title'))
 )
 title_field.send_keys(title_input)
