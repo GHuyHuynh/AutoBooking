@@ -122,6 +122,7 @@ try:
    title_field = WebDriverWait(driver, 30).until(
       EC.presence_of_element_located((By.ID, 'reservation-title'))
    )
+   print("Found reservation title field")
 except TimeoutException:
    print("Could not find reservation title field, trying one more time")
 
@@ -130,6 +131,7 @@ except TimeoutException:
       title_field = WebDriverWait(driver, 30).until(
          EC.presence_of_element_located((By.ID, 'reservation-title'))
       )
+      print("Found reservation title field after second attempt")
    except TimeoutException:
       print("Could not find reservation title field after second attempt")
 
