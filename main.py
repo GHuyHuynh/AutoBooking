@@ -15,6 +15,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from constants.constants import title_arrays, description_arrays
 
+import datetime
+
 load_dotenv()
 
 # Constants
@@ -64,9 +66,7 @@ print(login_url)
 
 driver.get(url)
 
-time.sleep(2)
-
-email_field = WebDriverWait(driver, 1).until(
+email_field = WebDriverWait(driver, 10).until(
    EC.presence_of_element_located((By.ID, 'email'))
 )
 email_field.send_keys(email)
@@ -142,11 +142,9 @@ title_field.send_keys(title_input)
 description_field = driver.find_element(By.ID, 'reservation-description')
 description_field.send_keys(description_input)
 
-time.sleep(1)
-
 try:
    print("Trying to find phone field")
-   phone_field = WebDriverWait(driver, 1).until(
+   phone_field = WebDriverWait(driver, 10).until(
       EC.visibility_of_element_located((By.ID, 'attribute-2'))
    )
    
@@ -162,24 +160,19 @@ try:
    body = driver.find_element(By.TAG_NAME, 'body')
    body.click()
    print("Clicked away from phone field")
-   time.sleep(1)
 
 except TimeoutException:
    print("Phone field not found")
 
 
-time.sleep(1)
-
-terms_checkbox = WebDriverWait(driver, 1).until(
+terms_checkbox = WebDriverWait(driver, 10).until(
    EC.presence_of_element_located((By.XPATH, '//*[@id="reservation-terms-checkbox"]'))
 )                                   
 
 driver.execute_script("arguments[0].scrollIntoView(true);", terms_checkbox)
 driver.execute_script("arguments[0].click();", terms_checkbox)
 
-time.sleep(2)
-
-submit_button = WebDriverWait(driver, 1).until(
+submit_button = WebDriverWait(driver, 10).until(
    EC.element_to_be_clickable((By.XPATH, '//*[@id="react-root"]/div/div[1]/div[2]/button'))
 )
 
@@ -188,10 +181,8 @@ driver.execute_script("arguments[0].click();", submit_button)
 
 print("Executed submit button")
 
-time.sleep(1)
-
 try:
-   confirmation_message = WebDriverWait(driver, 1).until(
+   confirmation_message = WebDriverWait(driver, 10).until(
       EC.presence_of_element_located((By.XPATH, '//*[@id="react-root"]/div/div[3]/div/div/div/div/div[1]/i'))  
    )
 
@@ -215,3 +206,5 @@ except TimeoutException:
 driver.quit()
 
 
+current_time = datetime.datetime.now()
+print(f"Current system time: {current_time}")
