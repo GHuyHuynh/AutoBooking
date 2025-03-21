@@ -177,6 +177,25 @@ submit_button = WebDriverWait(driver, 10).until(
 )
 
 driver.execute_script("arguments[0].scrollIntoView(true);", submit_button)
+
+current_time = datetime.datetime.now()
+print(f"Current system time: {current_time}")
+
+hour = current_time.hour
+minute = current_time.minute
+tries = 0
+
+while minute != 0:
+   time.sleep(1)
+   current_time = datetime.datetime.now()
+   minute = current_time.minute
+   tries += 1
+
+   if tries > 120:
+      break
+
+print("Executing time at ", current_time)
+
 driver.execute_script("arguments[0].click();", submit_button)
 
 print("Executed submit button")
@@ -204,7 +223,3 @@ except TimeoutException:
 
 
 driver.quit()
-
-
-current_time = datetime.datetime.now()
-print(f"Current system time: {current_time}")
