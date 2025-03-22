@@ -29,7 +29,6 @@ HOURS_5: List[int] = [19, 21]
 
 TIME_BLOCKS: List[List[int]] = [HOURS_0, HOURS_1, HOURS_2, HOURS_3, HOURS_4, HOURS_5]
 
-
 day: str = limit_date_object['day']
 month: str = limit_date_object['month']
 year: str = limit_date_object['year']
@@ -221,5 +220,7 @@ except TimeoutException:
    inner_html = error_message.get_attribute('innerHTML')
    print(inner_html)
 
+current_time = datetime.datetime.now()
+print("Script done at ", current_time)
 
 driver.quit()
